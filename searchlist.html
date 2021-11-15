@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anishifter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+        #myInput {
+
+            /* Do not repeat the icon image */
+            width: 60%;
+            /* Full-width */
+
+            /* Increase font-size */
+            padding-left: 20px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            /* Add some padding */
+            border-radius: 20px;
+
+            margin-bottom: 12px;
+            /* Add some space below the input */
+        }
+
+        #myUL {
+            /* Remove default list styling */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            /* Add a border to all links */
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #f6f6f6;
+            /* Grey background color */
+            padding: 12px;
+            /* Add some padding */
+            text-decoration: none;
+            /* Remove default text underline */
+            font-size: 18px;
+            /* Increase the font-size */
+            color: black;
+            /* Add a black text color */
+            display: block;
+            /* Make it into a block element to fill the whole list */
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+            /* Add a hover effect to all links, except for headers */
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5px auto;
+            /* 15% from the top and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            /* Position it in the top right corner outside of the modal */
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        /* Close button on hover */
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+    </style>
+    <script>
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+
+    </script>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Anishifter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="link">
+        <div>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Searching..">
+
+          <input type="button" class ='btn' value="Search" onclick="Redirect();" />
+            <script type="text/javascript">
+                 function Redirect() {
+                    window.location="http://localhost/searchlist2.html";
+                 }
+                
+           </script>
+           </div>
+
+        <ul id="myUL">
+            <li><a
+                onclick="window.open('https://www.phapluatplus.vn/phap-luat-plus/mua-vay-te-te-tu-nguoi-la-roi-len-mang-rao-ban-d169712.html')" href="survey.html"    >Mua
+                    vảy tê tê từ người lạ rồi lên mạng rao bán</a></li>
+            <li><a
+                    href="survey.html" onclick="window.open('https://baonghean.vn/lien-tiep-bat-giu-2-doi-tuong-van-chuyen-dong-vat-nguy-cap-quy-hiem-297136.html')" >Liên
+                    tiếp bắt giữ 2 đối tượng vận chuyển động vật nguy cấp, quý, hiếm</a></li>
+
+            <li><a href="survey.html" onclick="window.open('https://dongyphucthanh.vn/xuyen-son-giap-cong-nang-va-chu-tri')" >Xuyên Sơn Giáp - Công năng và
+                    chủ trị</a></li>
+            <li><a href="survey.html" onclick="window.open('https://suckhoedoisong.vn/vay-te-te-thong-kinh-hoat-lac-16918435.htm')" >Vẩy tê tê thông kinh hoạt
+                    lạc</a></li>
+
+            <li><a href="survey.html" onclick="window.open('https://caythuocquy.info.vn/che-bien-vi-thuoc-xuyen-son-giap')">Chế biến vị thuốc: Xuyên sơn
+                    giáp</a></li>
+            <li><a
+                    href="survey.html" onclick="window.open('https://syt.binhdinh.gov.vn/index.php/vi/news/y-hoc-co-truyen/nhung-vi-thuoc-thay-the-xuyen-son-giap-99.html')">Những
+                    vị thuốc thay thế Xuyên Sơn Giáp</a></li>
+            <li><a href="survey.html" onclick="window.open('https://centerforhealthreporting.org/vay-trut-chua-me-day-4047.html')">Vảy trút chữa mề đay có
+                    hiệu quả không, có nên dùng không ?</a></li>
+        </ul>   
+    </div>
+  
+
+
+
+
+</body>
+
+</html>

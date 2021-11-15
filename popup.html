@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anishifter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      .search{
+        margin: 0 auto;
+        text-align: center;
+      }
+      .search h4{
+        margin: 50px 0px 20px 0px;
+        font-size : 900%;
+      }
+      .search input[type=text]{
+        width: 60%;
+        border-radius: 20px;
+        outline: none;
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+       
+      }
+      .search a {
+        
+        background-color: white;
+       
+        margin-top: 20px;
+        width: 100px;
+        text-align: center;
+        margin-left:5px
+      }
+        
+      
+
+      
+      body {
+        background-image: linear-gradient(90deg , green, yellow)
+      }
+      
+    </style>
+    <script>
+     
+      
+    </script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Anishifter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+<!-- This is search bar -->
+
+<div class = "search">
+    <h4> <img src="loader.png" width ="150" height = "150" alt="" >
+      Ani-Shifter</h4>
+
+  <div>
+    <input id="search" type="text"  placeholder="Searching...."><br>
+    
+    <input type="button" class ='btn' value="Search" style="margin-top: 40px;" onclick="Redirect();" />
+    <script type="text/javascript">
+         function Redirect() {
+            window.location="http://localhost/searchlist.html";
+         }
+        
+   </script>
+   </div>
+    <a href="#" class = 'btn'>Tiếng Việt</a>
+    <a href="#" class = 'btn'>English</a>
+    <script type="text/javascript" src="anishipper.js"></script>
+
+   
+</div>
+    
+</body>
+</html>
